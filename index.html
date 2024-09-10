@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Restaurante Low Ball </title>
+</head>
+
+<body>
+
+    <header id="header-site">
+        <div id="img-header">
+            <img src="imagem/logo-hamburger.png" alt="imagem">
+        </div>
+
+        <nav id="nav-header">
+            <div id="box-btn-hamburger">
+                <button id="btn-hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+            </div>
+            <ul>
+                <li class="item-nav-header"><a href='#'>Inicio</a></li>
+                <li class="item-nav-header"><a href='#'>Sobre</a></li>
+                <li class="item-nav-header"><a href='#'>Cardápio</a></li>
+                <li class="item-nav-header"><a href='#'>Pedido</a></li>
+                <li class="item-nav-header"><a href='#'>Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="sec-formulario">
+        <form id="formulario">
+            <div>
+                <label for="Email">Email:</label>
+                <input type="email" id="usuario" required>
+            </div>
+
+            <div>
+                <label for="Senha">Senha:</label>
+                <input type="password">
+                <button>Ver Senha</button>
+            </div>
+            <input type="submit">
+
+        </form>
+    </section>
+
+</body>
+<script>
+
+    var btnHamburger = document.getElementById('btn-hamburger');
+    var navHeader = document.querySelector('#nav-header ul');
+
+    btnHamburger.addEventListener('click', function(evento){
+        evento.preventDefault();
+
+        navHeader.classList.toggle('ativo');
+    });
+    var formulario = document.getElementById('formulario');
+    formulario.addEventListener('click', function(eventoFormulario){
+        var inputUsuario=document.getElementById('usuario');
+        var valorUsuario=inputUsuario.value.trim();
+
+        if (valorUsuario.length < 3){
+            alert('Usuário Incorreto')
+        }
+    })
+</script>
+
+
+</html>
